@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove Word
+{% endblock %}
+
+{% block main %}
+    <form action="/remove" method="post">
+        <div class="mb-3">
+
+            <select name="word_id"
+                    class="form-control mx-auto w-auto">
+                <option value="">Select word to remove</option>
+                {% for word in words %}
+                    <option value="{{ word.id }}">
+                        {{ word.word }}
+                    </option>
+                {% endfor %}
+            </select>
+
+        </div>
+
+        <button class="btn btn-danger" type="submit">
+            Remove word
+        </button>
+    </form>
+{% endblock %}

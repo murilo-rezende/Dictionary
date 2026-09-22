@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Word
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus
+                   class="form-control mx-auto w-auto"
+                   name="word"
+                   placeholder="Word"
+                   type="text">
+
+            <p></p>
+
+            <input autocomplete="off"
+                   class="form-control mx-auto w-auto"
+                   name="meaning"
+                   placeholder="Meaning"
+                   type="text">
+
+            <p></p>
+
+            <select name="lexical_category"
+                    class="form-control mx-auto w-auto">
+                <option value="">Select lexical category</option>
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category.title() }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="btn-beige" type="submit">
+            Add word
+        </button>
+    </form>
+{% endblock %}

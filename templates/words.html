@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Word List
+{% endblock %}
+
+{% block main %}
+    <h1 class="page-title">Your Words</h1>
+
+    <form method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search word..." value="{{ request.args.get('q', '') }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if request.args.get('q') %}
+        <p>Results for "<strong>{{ request.args.get('q') }}</strong>"</p>
+    {% endif %}
+
+    {% if words %}
+    <p></p>
+        <table class="word-table">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Meaning</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for w in words %}
+                <tr>
+                    <td><strong>{{ w.word }}</strong></td>
+                    <td>{{ w.meaning }}</td>
+                    <td>{{ w.lexical_category.title() }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No words found.</p>
+    {% endif %}
+
+{% endblock %}
