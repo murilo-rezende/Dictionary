@@ -2,7 +2,7 @@ Dictionary
 
 Video Demo: https://www.youtube.com/watch?v=zc33dsl9b04
 
-Descrpition:
+Description:
 
 Dictionary is a web-based application designed to allow users to create and manage their own personalized language dictionary. The main goal of the application is to provide a simple, intuitive, and organized platform where users can store words from any language along with their respective meanings and lexical categories. This tool can be especially useful for language learners, writers, linguists, or anyone interested in building a customized vocabulary database for personal or academic use.
 
